@@ -1,0 +1,21 @@
+{
+    "name": "taoti/D3Sockets",
+    "description": "A Ratchet Server which will feed d3.js",
+    "type": "project",
+    "license": "gpl2+",
+    "authors": [
+        {
+            "name": "Rich Allen",
+            "email": "rallen@taoti.com"
+        }
+    ],
+    "require": {
+        "cboden/ratchet": "^0.3.4",
+        "react/zmq": "^0.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "D3Sockets\\": "src/"
+        }
+    }
+}
