@@ -1,5 +1,5 @@
 {
-    "name": "taoti/D3Sockets",
+    "name": "taoti/d3sockets",
     "description": "A Ratchet Server which will feed d3.js",
     "type": "project",
     "license": "gpl2+",
