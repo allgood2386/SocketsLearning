@@ -10,6 +10,12 @@ use Ratchet\ConnectionInterface;
  * Send any incoming messages to all connected clients (except sender)
  */
 class MapData implements WampServerInterface {
+  private $topics;
+  private $interfaceDevice;
+  
+  public function __construct(DeviceInterface $deviceInterface) {
+    $this->interfaceDevice = $deviceInterface;
+  }
 
   /**
    * A lookup of all the topics clients have subscribed to
@@ -27,7 +33,8 @@ class MapData implements WampServerInterface {
    *   A JSON string
    */
   public function onUpdate($data) {
-    $data = json_decode($data, true);
+    $data = new Map($data);
+
 
     if (!array_key_exists($data['channel'], $this->subscribedTopics)) {
       return;
